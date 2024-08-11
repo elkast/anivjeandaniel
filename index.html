@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Elite: Maîtrisez l'Art du Hacking Éthique</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+  :root {
+    --bg-color: #0a0e17;
+    --text-color: #e0e0e0;
+    --primary-color: #00ff00;
+    --secondary-color: #00ccff;
+    --accent-color: #ff00ff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+
+  nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: var(--primary-color);
+  }
+
+  .module {
+    background-color: rgba(255, 255, 255, 0.05);   
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
+  }
+
+  h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .code-example {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: auto;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .test-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .test-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .test-btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+  #output {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Python Elite: Maîtrisez l'Art du Hacking Éthique par elkast</h1>
+    <h2>Une formation avancée pour un étudiant d'élite </h2>
+    <h3> #joyeux anniversaire mon ami @jean daniel </h3>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#scapy">Scapy</a></li>
+      <li><a href="#requests">Requests</a></li>
+      <li><a href="#beautifulsoup">BeautifulSoup</a></li>
+      <li><a href="#paramiko">Paramiko</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="introduction" class="module">
+      <h2>Introduction au Hacking Éthique avec Python</h2>
+      <p>Le hacking éthique est une discipline cruciale dans le domaine de la cybersécurité. Python, grâce à sa simplicité et sa puissance, est devenu l'un des langages les plus utilisés dans ce domaine. Dans cette formation avancée, nous allons explorer en profondeur les bibliothèques Python essentielles pour le hacking éthique.</p>
+    </section>
+
+    <section id="scapy" class="module">
+      <h2>Scapy: Manipulation de Paquets Réseau</h2>
+      <p>Scapy est une bibliothèque puissante pour la création, la manipulation et l'analyse de paquets réseau. Elle permet aux hackers éthiques de simuler des attaques, d'analyser le trafic et de tester la sécurité des réseaux.</p>
+      
+      <div class="code-example">
+        from scapy.all import *
+
+        # Envoi d'un paquet ICMP (ping)
+        ping = IP(dst="8.8.8.8")/ICMP()
+        response = sr1(ping, timeout=2, verbose=False)
+
+        if response:
+            print(f"Réponse reçue de {response.src}")
+        else:
+            print("Aucune réponse reçue")
+      </div>
+
+      <div class="test-section">
+        <h3>Test Interactif</h3>
+        <p>Envoyez un ping à Google et analysez la réponse:</p>
+        <button class="test-btn" onclick="testScapy()">Exécuter le test</button>
+        <div id="output"></div>
+      </div>
+    </section>
+
+    <section id="requests" class="module">
+      <h2>Requests: Interactions HTTP Avancées</h2>
+      <p>Requests simplifie grandement les requêtes HTTP, ce qui est essentiel pour le web scraping, les tests de sécurité web et l'interaction avec les API.</p>
+      
+      <div class="code-example">
+        import requests
+
+        # Effectuer une requête GET
+        response = requests.get('https://api.github.com/users/octocat')
+        
+        if response.status_code == 200:
+            data = response.json()
+            print(f"Nom d'utilisateur: {data['login']}")
+            print(f"Bio: {data['bio']}")
+        else:
+            print(f"Erreur: {response.status_code}")
+      </div>
+
+      <div class="test-section">
+        <h3>Test Interactif</h3>
+        <p>Récupérez les informations d'un utilisateur GitHub:</p>
+        <input type="text" id="github-username" placeholder="Nom d'utilisateur GitHub">
+        <button class="test-btn" onclick="testRequests()">Récupérer les infos</button>
+        <div id="output-requests"></div>
+      </div>
+    </section>
+
+    <section id="beautifulsoup" class="module">
+      <h2>BeautifulSoup: Parsing HTML et XML</h2>
+      <p>BeautifulSoup est un outil puissant pour l'extraction de données à partir de pages HTML et XML. Elle est souvent utilisée en conjonction avec Requests pour le web scraping.</p>
+      
+      <div class="code-example">
+        import requests
+        from bs4 import BeautifulSoup
+
+        # Récupérer le contenu d'une page web
+        url = 'https://news.ycombinator.com/'
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Extraire les titres des articles
+        for title in soup.find_all('a', class_='storylink'):
+            print(title.text)
+      </div>
+
+      <div class="test-section">
+        <h3>Test Interactif</h3>
+        <p>Extrayez les titres des articles de Hacker News:</p>
+        <button class="test-btn" onclick="testBeautifulSoup()">Extraire les titres</button>
+        <div id="output-bs"></div>
+      </div>
+    </section>
+
+    <section id="paramiko" class="module">
+      <h2>Paramiko: Automatisation SSH</h2>
+      <p>Paramiko permet d'établir des connexions SSH et d'exécuter des commandes à distance. C'est un outil précieux pour l'automatisation des tâches de sécurité et les tests de pénétration.</p>
+      
+      <div class="code-example">
+        import paramiko
+
+        # Établir une connexion SSH
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect('example.com', username='user', password='password')
+
+        # Exécuter une commande
+        stdin, stdout, stderr = ssh.exec_command('ls -l')
+        print(stdout.read().decode())
+
+        ssh.close()
+      </div>
+
+      <div class="test-section">
+        <h3>Test Interactif</h3>
+        <p>Simulez une connexion SSH et l'exécution d'une commande:</p>
+        <input type="text" id="ssh-command" placeholder="Commande à exécuter">
+        <button class="test-btn" onclick="testParamiko()">Exécuter la commande</button>
+        <div id="output-paramiko"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pyodide/0.22.1/pyodide.js"></script>
+  <script>
+    async function loadPyodide() {
+      self.pyodide = await loadPyodide();
+      await self.pyodide.loadPackage("micropip");
+      const micropip = pyodide.pyimport("micropip");
+      await micropip.install('requests');
+      await micropip.install('beautifulsoup4');
+    }
+    loadPyodide();
+
+    function testScapy() {
+      const output = document.getElementById('output');
+      output.textContent = "Simulation d'un ping vers 8.8.8.8...\n";
+      setTimeout(() => {
+        output.textContent += "Réponse reçue de 8.8.8.8\nTemps de réponse: 15ms";
+      }, 1000);
+    }
+
+    async function testRequests() {
+      const username = document.getElementById('github-username').value;
+      const output = document.getElementById('output-requests');
+      output.textContent = "Chargement...";
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        const data = await response.json();
+        if (response.ok) {
+          output.textContent = `Nom d'utilisateur: ${data.login}\nBio: ${data.bio || 'Non spécifiée'}`;
+        } else {
+          output.textContent = `Erreur: ${data.message}`;
+        }
+      } catch (error) {
+        output.textContent = `Erreur: ${error.message}`;
+      }
+    }
+
+    async function testBeautifulSoup() {
+      const output = document.getElementById('output-bs');
+      output.textContent = "Extraction des titres...";
+      try {
+        const code = `
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://news.ycombinator.com/'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = [title.text for title in soup.find_all('span', class_='titleline')[:5]]
+"\\n".join(titles)
+        `;
+        const result = await self.pyodide.runPythonAsync(code);
+        output.textContent = result;
+      } catch (error) {
+        output.textContent = `Erreur: ${error.message}`;
+      }
+    }
+
+    function testParamiko() {
+      const command = document.getElementById('ssh-command').value;
+      const output = document.getElementById('output-paramiko');
+      output.textContent = `Simulation de l'exécution de la commande: ${command}\n`;
+      setTimeout(() => {
+        output.textContent += "Résultat:\n";
+        output.textContent += "total 32\ndrwxr-xr-x 2 user user 4096 May 15 10:00 Documents\n" +
+                              "drwxr-xr-x 2 user user 4096 May 15 10:00 Downloads\n" +
+                              "drwxr-xr-x 2 user user 4096 May 15 10:00 Pictures\n";
+      }, 1000);
+    }
+  </script>
+</body></html>
